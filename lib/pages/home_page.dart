@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jira_tracker/widgets/track_list_view.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -33,14 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: ListView.builder(itemBuilder: (context, index) {
-          return ListTile(
-            title: Text('Item $index'),
-          );
-        }),
+      body: const Center(
+        child: TimerListView(),
       ),
     );
   }
