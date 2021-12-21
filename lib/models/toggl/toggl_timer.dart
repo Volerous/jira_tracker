@@ -85,7 +85,7 @@ extension TogglTimerListExtensions on List<TogglTimer> {
   }
 
   List<TogglTimer> withSum() {
-    add(TogglTimer(duration: sum(), description: "sum"));
+    add(TogglTimer(duration: sum(), description: "Total"));
     return this;
   }
 }

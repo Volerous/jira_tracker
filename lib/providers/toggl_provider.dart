@@ -1,8 +1,8 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:jira_tracker/models/models.dart';
-import 'package:jira_tracker/services/interceptors.dart';
 import 'package:jira_tracker/services/services.dart';
 import 'package:dio/dio.dart';
+import 'package:jira_tracker/providers/shared.dart';
 
 class TogglNotifier extends StateNotifier<List<TogglTimer>> {
   final TogglService _togglService = TogglService(Dio());
@@ -11,12 +11,6 @@ class TogglNotifier extends StateNotifier<List<TogglTimer>> {
   Future<List<TogglTimer>> get getTogglTimers => _togglService.getTimeEntries(
       DateTime.now().toIso8601String(), DateTime.now().toIso8601String());
 }
-
-final dioProvider = Provider((ref) {
-  Dio dio = Dio();
-  dio.interceptors.add(BaseInterceptors());
-  return dio;
-});
 
 final togglServiceProvider = Provider((ref) {
   final dio = ref.watch(dioProvider);

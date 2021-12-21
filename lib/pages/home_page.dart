@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jira_tracker/widgets/case_list_view.dart';
 import 'package:jira_tracker/widgets/track_list_view.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -35,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: const Center(
-        child: TimerListView(),
+        child: CaseListView(),
       ),
     );
   }
